@@ -58,7 +58,10 @@ class weapon(object):
         return "You wield the {}, {}, with Max Attack of {}\n".format(self.name, self.description, self.maxAttack)
        
     def obtainWeapon(self):
-        print(" ")
+        print()
+        time.sleep(1)
+        print("Your dead enemy was carrying an object")
+        time.sleep(2)
         print("!!! NEW WEAPON acquired. You have obtained the {}, {},  Max Attack increased by {}!!!".format(self.name, self.description, self.maxAttack))
         global myWeapVal
         global myMaxAttack
@@ -78,7 +81,10 @@ class armor(object):
         return "You are wearing the {}, {}, with health buff of {}\n".format(self.name, self.description, self.health)
        
     def obtainArmor(self):
-        print(" ")
+        print()
+        time.sleep(1)
+        print("You stumble upon....a treasure chest")
+        time.sleep(2)
         print("!!! NEW ARMOR acquired. You have obtained the {}, {}.  Health increased by {}!!!".format(self.name, self.description, self.health))
         global myArmorVal
         global myMaxHealth
@@ -447,6 +453,8 @@ def fight(enemy):
             
         else:    
             experience = experience + enemy.exp
+            time.sleep(1)
+            print()
             print("|---You win. Experience increased by {} to {}. Health restored.---|".format(enemy.exp, experience))
             myMaxAttack = math.ceil(myMaxAttack* enemy.exppercent)
             myMaxHealth = int(myMaxHealth*enemy.exppercent)
@@ -567,7 +575,7 @@ while myHealth > 0:
         fight(RedDragon)
             
 
-    time.sleep(2)
+    time.sleep(3)
     print(". . . . ")
     
 
